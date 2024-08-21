@@ -1,8 +1,14 @@
-# FROM maven:3-eclipse-temurin-17 AS build
-# COPY . .
-# RUN ./gradlew build
+# ベースイメージの指定
+FROM openjdk:17
 
-FROM eclipse-temurin:17-alpine
-COPY --from=build build/libs/demo-0.0.1-SNAPSHOT.jar demo.jar
+# ワーキングディレクトリの設定
+WORKDIR /app
+
+# アプリケーションのJARファイルをコンテナにコピー
+COPY build/libs/*.jar app.jar
+
+# ポートの公開
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "demo.jar"]
+
+# アプリケーションの実行コマンド
+ENTRYPOINT ["java", "-jar", "app.jar"]
