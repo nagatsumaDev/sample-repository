@@ -1,6 +1,6 @@
 FROM gradle:7.4.2-jdk17 AS build
 COPY . .
-RUN gradle build --no-daemon 
+RUN gradlew build --no-daemon 
 
 # ベースイメージの指定
 FROM openjdk:17
