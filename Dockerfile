@@ -1,6 +1,6 @@
 FROM amazoncorretto:17 AS build
 COPY ./ /home/app
-RUN cd /home/app && ./gradlew clean build
+RUN cd /home/app && ./gradlew.bat clean build
 
 FROM amazoncorretto:17-alpine
 COPY --from=build /home/app/build/libs/*.jar /usr/local/lib/spring-render-deploy.jar
