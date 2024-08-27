@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Hello</title>
+    <meta charset="utf-8" />
+	<link th:href="@{/css/loginCommon.css}" rel="stylesheet" type="text/css">
+ </head>
+  <body>
+	<form type="submit" method="post" action="/memo/login" autocomplete="off">
+		<div><h2>login</h2></div>
+		<div><input type="text" name="userId" placeholder="ユーザID" th:value="${userId}"></div>
+		<div><input type="password" name="password" placeholder="パスワード"></div>
+		<div><input type="submit" class="submit" value="ログイン"></div>
+		<div class="alert_message"><p th:if="${message != null}" th:text="${message}"></p></div>
+	</form>
+	<div style="padding:10px"><a href="/memo/regist">会員登録はこちら</a></div>
+  </body>
+</html>

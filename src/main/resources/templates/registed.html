@@ -3,12 +3,15 @@
   <head>
     <title>Hello</title>
     <meta charset="utf-8" />
+	<link th:href="@{/css/loginCommon.css}" rel="stylesheet" type="text/css">
   </head>
   <body>
-	<form type="submit" action="/update">
-		<label>登録しました。</label>
-		<label>[[${userId}]]</label>
-		<label>[[${userName}]]</label>
+	<form type="submit" method="post" action="/memo/update" autocomplete="off">
+		<div><p th:text="'ニックネーム：' + ${userName}"></div>
+		<div><p th:text="'ユーザID：' + ${userId}"></div>
+		<div><p th:text="登録に成功しました。"></p></div>
 	</form>
+	<div style="padding:10px"><a href="/memo">戻る</a></div>
+
   </body>
 </html>

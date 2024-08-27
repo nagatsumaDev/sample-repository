@@ -3,47 +3,18 @@
   <head>
     <title>Hello</title>
     <meta charset="utf-8" />
-	<style type="text/css">
-
-form {
-	background-color:white;
-	padding: 40px 20px;
-	border-radius:10px;
-	width:400px;
-	margin:auto;
-	margin-top:10%;
-}
-
-body {
-	background-color: rgb(255 233 169);
-}
-div {
-text-align: center;
-}
-input {
-	margin:5px;
-	height: 30px;
-	width: 300px;
-}
-.submit {
-	margin-top:50px;
-	border-radius:5px;
-	cursor:pointer;
-	background-color:rgb(134, 188, 249);
-	color:white;
-	border:1px solid rgb(6, 61, 121);
-}
-
-	</style>
-    
+	<link th:href="@{/css/loginCommon.css}" rel="stylesheet" type="text/css">
   </head>
   <body>
-	<form type="submit" method="post" action="/update" autocomplete="off">
+	<form type="submit" method="post" action="/memo/update" autocomplete="off">
 		<div><h2>会員登録</h2></div>
-		<div><input type="text" name="userName" placeholder="氏名"></div>
-		<div><input type="text" name="userId" placeholder="ユーザID"></div>
+		<div><input type="text" name="userName" placeholder="ニックネーム" th:value="${userName}"></div>
+		<div><input type="text" name="userId" placeholder="ユーザID" th:value="${userId}"></div>
 		<div><input type="password" name="password" placeholder="パスワード"></div>
 		<div><input class="submit" type="submit" value="登録"></div>
+		<div class="alert_message"><p th:if="${message != null}" th:text="${message}"></p></div>
 	</form>
+	<div style="padding:10px"><a href="/memo">戻る</a></div>
+
   </body>
 </html>
