@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// Spring Data JPAのアノテーション
 @Entity
 @Table(name = "m_user")
 public class MUser {

@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,18 +34,21 @@ public class HelloWorldController {
     @PostMapping("/login")
     public ModelAndView login(HttpServletRequest rquest) {
     	
+    	// 画面からuserIdとpasswordを取得
     	String userId = rquest.getParameter("userId");
         String password = rquest.getParameter("password");
        	
         MUser mUser = loginCheck(userId, password);
         
        	if (mUser != null) {
+       		// 一致するユーザがいる場合
        	   	ModelAndView view = new ModelAndView();
         	view.addObject("userId", userId);
         	view.addObject("userName", mUser.getUserName());
         	view.setViewName("memo.html");
         	return view;
         } else {
+        	// 一致するユーザがいない場合
        	   	ModelAndView view = new ModelAndView();
         	view.addObject("userId", userId);
         	view.addObject("message", "IDまたはパスワードが異なります。");
@@ -110,7 +111,7 @@ public class HelloWorldController {
 	}
     
     private void updateMUser(String userId, String password, String userName) {
-    	List<MUser> mUserList = userService.findAll();
+//    	List<MUser> mUserList = userService.findAll();
     	
     	MUser mUser = new MUser(userId, password, userName);
     	

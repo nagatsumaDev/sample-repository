@@ -6,7 +6,7 @@ html, body {
 	color:#555;
 }
 form {
-	background-color:white;
+	background-color:#ffffffbb ;
 	padding: 40px 20px;
 	border-radius:10px;
 	width:400px;
@@ -15,7 +15,7 @@ form {
 }
 
 body {
-	background-color: rgb(255 233 169);
+	background-color: #ffe7c3;
 }
 
 div {
@@ -30,15 +30,23 @@ input {
 
 input[type=text],input[type=password] {
 	font-size:16px;
+	border:solid 1px #ccc;
+	border-radius:5px;
+}
+
+::placeholder {
+  color: #ccc;
 }
 
 .submit {
 	margin-top:50px;
 	border-radius:5px;
+	width:150px;
+	height:30px;
 	cursor:pointer;
-	background-color:rgb(134, 188, 249);
+	background-color:#ff9b6a;
 	color:white;
-	border:1px solid rgb(6, 61, 121);
+	border:0px;
 }
 
 .alert_message {

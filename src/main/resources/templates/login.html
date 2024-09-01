@@ -3,11 +3,12 @@
   <head>
     <title>Hello</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=500">
 	<link th:href="@{/css/loginCommon.css}" rel="stylesheet" type="text/css">
  </head>
   <body>
 	<form type="submit" method="post" action="/memo/login" autocomplete="off">
-		<div><h2>login</h2></div>
+		<div class="user-icon"><img src="/img/usericon.png" width="100px"></div>
 		<div><input type="text" name="userId" placeholder="ユーザID" th:value="${userId}"></div>
 		<div><input type="password" name="password" placeholder="パスワード"></div>
 		<div><input type="submit" class="submit" value="ログイン"></div>
