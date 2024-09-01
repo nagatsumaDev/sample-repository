@@ -8,7 +8,7 @@
  </head>
   <body>
 	<form type="submit" method="post" action="/memo/login" autocomplete="off">
-		<div class="user-icon"><img src="/img/usericon.png" width="100px"></div>
+		<div class="user-icon"><img th:src="@{/img/usericon.png}" width="100px"></div>
 		<div><input type="text" name="userId" placeholder="ユーザID" th:value="${userId}"></div>
 		<div><input type="password" name="password" placeholder="パスワード"></div>
 		<div><input type="submit" class="submit" value="ログイン"></div>
